@@ -1,0 +1,70 @@
+$post-toc-margin-left: $body-width !default;
+$toc-max-sreen-width: 2 * 200px + $post-toc-margin-left !default;
+
+.post-toc {
+  position: absolute;
+  width: 300px;
+  margin-left: $post-toc-margin-left;
+  padding: 10px;
+  border-radius: 5px;
+  word-wrap: break-word;
+  box-sizing: border-box;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  top: 0px;
+  height: 100vh;
+  opacity: 0.25;
+  transition: opacity 0.5s ease-in-out;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  .post-toc-title {
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  .post-toc-content {
+    font-size: 15px;
+
+    &.always-active ul {
+      display: block;
+    }
+
+    > nav > ul {
+      margin: 10px 0;
+    }
+
+    ul {
+      padding-left: 10px;
+
+      ul {
+        padding-left: 15px;
+        display: none;
+      }
+
+      .has-active > ul {
+        display: block;
+      }
+    }
+
+    .toc-link {
+      color: var(--text-color);
+      line-height: 1.2;
+      &:hover {
+        color: var(--primary-color);
+      }
+    }
+
+    .toc-link.active {
+      color: var(--primary-color);
+    }
+  }
+}
+@include max-screen($toc-max-sreen-width) {
+  .post-toc {
+    display: none;
+  }
+}

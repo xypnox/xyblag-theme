@@ -1,0 +1,42 @@
+html {
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1.5;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  font-family: $ui-font;
+}
+
+.container {
+  width: $body-width;
+  margin: 0 auto;
+}
+
+@include max-screen() {
+  body {
+    border-top: 0;
+  }
+
+  .container {
+    width: 100%;
+  }
+}
+
+a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+iframe {
+  border: 0;
+}

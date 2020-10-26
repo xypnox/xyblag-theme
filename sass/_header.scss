@@ -1,0 +1,48 @@
+#header {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .logo {
+    font-weight: 600;
+
+    a {
+      color: var(--text-color);
+      font-size: 1.5rem;
+    }
+  }
+
+  .menu {
+    align-self: flex-start;
+    ul {
+      display: inline-block;
+      padding-right: 25px;
+
+      li {
+        display: inline-block;
+        margin-right: 15px;
+        @include underline-from-center;
+
+        a {
+          color: var(--text-color);
+          font-size: 18px;
+        }
+      }
+    }
+  }
+
+  &.index-header {
+    justify-content: flex-end;
+  }
+}
+@include max-screen() {
+  #header {
+    .logo,
+    .menu {
+      display: none;
+    }
+    padding: 50px 0 0;
+    text-align: center;
+  }
+}

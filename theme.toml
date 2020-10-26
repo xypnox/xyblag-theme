@@ -1,0 +1,23 @@
+name = "xyblag"
+description = "A robust, elegant theme for xypnox's blag"
+license = "MIT"
+homepage = "https://github.com/xypnox/blag"
+min_version = "0.1.0"
+demo = ""
+
+[extra]
+blog_menu = [
+    {url = "$BASE_URL", name = "Home"},
+    {url = "$BASE_URL/categories", name = "Categories"},
+    {url = "$BASE_URL/tags", name = "Tags"},
+    {url = "$BASE_URL/about", name = "About"},
+]
+
+[author]
+name = "xypnox"
+homepage = "https://www.xypnox.com"
+
+[original]
+author = "Vincent Prouillet"
+homepage = "https://zola-even.netlify.com"
+repo = "https://github.com/getzola/even"

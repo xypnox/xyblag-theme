@@ -1,0 +1,62 @@
+// DESIGN SYSTEM
+
+// Colors
+
+$theme-color-map: (
+  'Default': #c05b4d #f8f5ec,
+  'Mint Green': #16982b #f5f5f5,
+  'Cobalt Blue': #0047ab #f0f2f5,
+  'Hot Pink': #ff69b4 #f8f5f5,
+  'Dark Violet': #9932cc #f5f4fa,
+);
+
+$dark-text: #34495e;
+:root,
+[data-theme='light'] {
+  --primary-color: #{#33df97};
+  --secondary-color: #{#6f879e};
+  --background-color: #{#fff};
+  --text-color: #{$dark-text};
+  --secondary-text-color: #{lighten($dark-text, 10%)};
+  --tag-hover-color: #{$dark-text};
+  --post-heading-color: #{$dark-text};
+  --code-color: #{#1a6d5b};
+  --code-back-color: #{rgba($dark-text, 0.07)};
+  --code-block-color: #{#c9d2dc};
+  --light-accent-color: #{rgba($dark-text, 0.2)};
+  --quote-color: #{rgba($dark-text, 0.8)};
+  --hover-focus-color: #{rgba($dark-text, 0.07)};
+  --hover-active-color: #{rgba($dark-text, 0.2)};
+  --shadow-color: #{rgba($color: #5e5f72, $alpha: 0.15)};
+}
+
+// Typography
+
+$code-font-family: Consolas, Monaco, Menlo, Consolas, monospace !default;
+$serif-font: 'Crimson Text', serif;
+$ui-font: 'Jost*', 'Jost', sans-serif;
+
+// Layout / Sizes
+
+$body-width: 800px;
+$screen-sm-max: 800px;
+$mobile-navbar-height: 50px !default;
+
+// Small devices
+@mixin sm {
+  @media (max-width: #{$screen-sm-max}) {
+    @content;
+  }
+}
+
+@mixin min-screen($min-width: $body-width) {
+  @media screen and (min-width: $min-width) {
+    @content;
+  }
+}
+
+@mixin max-screen($max-width: $body-width) {
+  @media screen and (max-width: $max-width) {
+    @content;
+  }
+}

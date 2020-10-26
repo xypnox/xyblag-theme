@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% import "post_macros.html" as post_macros %}
+{% block navigation %}
+    {{ page_macros::navbar_index(config=config) }}
+{% endblock navigation %}
+{% block content %}
+    <div class="hero">
+        <div class="logo">
+            <a href="{{ config.base_url }}">{{ config.title }}</a>
+        </div>
+        <p>
+            {{ config.description }}
+        </p>
+    </div>
+    <div class="index-list">
+        {% for page in paginator.pages %}
+            <article class="post-block">
+                {{ post_macros::title(page=page) }}
+            </article>
+        {% endfor %}
+    </div>
+    <nav class="pagination">
+        {% if paginator.previous %}
+            <a class="previous" href="{{ paginator.previous }}">‹ Previous</a>
+        {% endif %}
+        {% if paginator.next %}
+            <a class="next" href="{{ paginator.next }}">Next ›</a>
+        {% endif %}
+    </nav>
+{% endblock content %}
